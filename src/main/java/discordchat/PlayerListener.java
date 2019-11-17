@@ -33,7 +33,7 @@ public class PlayerListener implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onChat(PlayerChatEvent e) {
         if (!Main.config.getBoolean("enableMinecraftToDiscord")) return;
-        if (!e.isCancelled() && Main.channel != null) Main.channel.sendMessage(TextFormat.clean(e.getPlayer().getName() + " \u00BB " + e.getMessage())).queue();
+        if (!e.isCancelled() && Main.channel != null) Main.channel.sendMessage(TextFormat.clean(e.getPlayer().getName() + " \u00BB `" + e.getMessage() + "`")).queue();
     }
 
     private String textFromContainer(TextContainer container) {
